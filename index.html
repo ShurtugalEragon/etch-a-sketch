@@ -1,50 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="utility.js"></script>
         <title>Etch-A-Sketch</title>
         <style>
-            .parent {
+            #parent {
                 display: flex;
                 flex-wrap:wrap;
                 height: 70vh;
-                padding: 10vh 10vw 10vh 10vw;
+                padding: 5vh 10vw 10vh 10vw;
             }
             .child {
-                height: 100% / 16;
                 background-color: black;
                 margin: 0px;
-                width: calc(100% / 16);
             }
             .activeColor {
                 background-color: red;
+            }
+            #changeButton {
+                display: flex;
+                justify-content: center;
             }
         </style>
     </head>
     
     <body>
-        <div class="parent">
+        <div id="changeButton">
+            <button onclick="changeGrid()">Change grid size</button>
+        </div>
+        
+        <div id="parent">
             <script>
-                const parentDiv = document.querySelector("div.parent");
-
-                for (let i = 0; i < 16; ++i) {
-                    for (let j = 0; j < 16; ++j) {
-                        const block = document.createElement("div");
-                        block.className = "child";
-                        const id = `${i},${j}`;
-                        block.id = id;
-
-                        block.addEventListener("mouseenter", (e) => {
-                            document.getElementById(id).classList.add("activeColor");
-                        });
-                        block.addEventListener("mouseleave", (e) => {
-                            setTimeout(() => {
-                                document.getElementById(id).classList.remove("activeColor");
-                            }, 2000);
-                        });
-
-                        parentDiv.appendChild(block);
-                    }
-                }
+                createGrid(16);
             </script>
         </div>
     </body>

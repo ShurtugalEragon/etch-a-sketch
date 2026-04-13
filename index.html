@@ -36,7 +36,9 @@
                             document.getElementById(id).classList.add("activeColor");
                         });
                         block.addEventListener("mouseleave", (e) => {
-                            document.getElementById(id).classList.remove("activeColor");
+                            setTimeout(() => {
+                                document.getElementById(id).classList.remove("activeColor");
+                            }, 2000);
                         });
 
                         parentDiv.appendChild(block);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch-A-Sketch</title>
+        <style>
+            .parent {
+                display: flex;
+                flex-wrap:wrap;
+                padding: 100px;
+            }
+            .child {
+                height: 50px;
+                background-color: black;
+                margin: 5px;
+                width: calc(100% / 16 - 10px);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="parent">
+            <script>
+                const parentDiv = document.querySelector("div.parent");
+
+                for (let i = 0; i < 16; ++i) {
+                    for (let j = 0; j < 16; ++j) {
+                        const block = document.createElement("div");
+                        block.className = "child";
+                        parentDiv.appendChild(block);
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

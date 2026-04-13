@@ -8,10 +8,12 @@
                 display: flex;
                 flex-wrap:wrap;
                 height: 70vh;
-                padding: 5vh 10vw 10vh 10vw;
+                margin: 5vh 10vw 10vh 10vw;
+                border-color: black;
+                border-style: solid;
             }
             .child {
-                background-color: black;
+                background-color: white;
                 margin: 0px;
             }
             .activeColor {
@@ -19,13 +21,15 @@
             }
             #changeButton {
                 display: flex;
-                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
         </style>
     </head>
     
     <body>
         <div id="changeButton">
+            <h1>Etch-A-Sketch</h1>
             <button onclick="changeGrid()">Change grid size</button>
         </div>
         

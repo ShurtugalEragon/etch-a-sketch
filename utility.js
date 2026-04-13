@@ -19,11 +19,15 @@ function createGrid(n) {
             block.style.width = 100 / n + "%";
 
             block.addEventListener("mouseenter", (e) => {
-                document.getElementById(id).classList.add("activeColor");
+                const r = Math.random() * 255;
+                const g = Math.random() * 255;
+                const b = Math.random() * 255;
+
+                block.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             });
             block.addEventListener("mouseleave", (e) => {
                 setTimeout(() => {
-                    document.getElementById(id).classList.remove("activeColor");
+                    block.style.backgroundColor = "white";
                 }, 2000);
             });
 
